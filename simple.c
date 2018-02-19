@@ -1,12 +1,10 @@
-double dot(int n, double *a, int m, double *b){
-  double sum = 0.0;
-  for (int i=0; i<n; i++){
-    sum += a[i]*b[i];
-  }
-  return sum;
-}
+/* Need to use 1D index for accessing array elements */
+void modifyArray(int sizex, int sizey, double *arr) {
+  for (int i=0; i<sizex; i++) {
+  	for (int j=0; j<sizey; j++) {
+  		int n=i*sizey+j;
 
-void create_list(int size, double *arr){
-  for (int i=0; i<size; i++)
-    arr[i] = i;
+  		arr[n] = i*j;
+  	}
+  }
 }
