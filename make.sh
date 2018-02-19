@@ -1,5 +1,7 @@
 #!/bin/bash
-# add line to donwload this if not already there, wget https://raw.githubusercontent.com/numpy/numpy/master/tools/swig/numpy.i
+
+# download numpy.i if not already in the dir 
+[ -f ./numpy.i ] && echo "numpy.i already here, good" || wget https://raw.githubusercontent.com/numpy/numpy/master/tools/swig/numpy.i
 
 swig -python -o simple_wrap.c simple.i
 gcc -c -fPIC simple.c -o simple.o
